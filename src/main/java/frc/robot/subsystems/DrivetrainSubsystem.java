@@ -5,15 +5,32 @@
 package frc.robot.subsystems;
 
 import com.revrobotics.CANSparkMax;
+import com.revrobotics.RelativeEncoder;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
+import edu.wpi.first.wpilibj.motorcontrol.Talon;
+import edu.wpi.first.wpilibj.motorcontrol.Victor;
+import edu.wpi.first.wpilibj.motorcontrol.VictorSP;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class ExampleSubsystem extends SubsystemBase {
+public class DrivetrainSubsystem extends SubsystemBase {
+
   /** Creates a new ExampleSubsystem. */
-  public ExampleSubsystem() {}
-  CANSparkMax neo = new CANSparkMax(0, MotorType.kBrushless);
+  RelativeEncoder flecha;
+  VictorSP motorizq1;
+  VictorSP motorder1;
+  Talon motorizq2;
+  Talon motorder2;
+
+  public DrivetrainSubsystem() {
+    motorizq1 = new VictorSP(0);
+    {
+      
+    };
+  }
+  
+
   /**
    * Example command factory method.
    *
